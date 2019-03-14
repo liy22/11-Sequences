@@ -10,7 +10,7 @@ in testing and BOUNDARY (EDGE) TESTING.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
+         and Yiqing Li  .
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import random
@@ -35,9 +35,9 @@ import math
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_sum_sequence()
-    # run_test_count_items_bigger_than()
-    # run_test_count_positive_sines()
-    # run_test_sum_first_n()
+    run_test_count_items_bigger_than()
+    run_test_count_positive_sines()
+    run_test_sum_first_n()
 
 
 def run_test_sum_sequence():
@@ -231,6 +231,10 @@ def sum_sequence(sequence):
     #      -- The TESTING code above does use   built_ins.sum
     #         as an ORACLE in TESTING this function, however.
     # -------------------------------------------------------------------------
+    sum = 0
+    for k in range(len(sequence)):
+        sum = sum + sequence[k]
+    return sum
 
 
 def run_test_count_items_bigger_than():
@@ -400,7 +404,11 @@ def count_items_bigger_than(numbers, threshold):
     # TODO: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
-
+    count = 0
+    for k in range(len(numbers)):
+        if numbers[k] > threshold:
+            count = count +1
+    return count
 
 def run_test_count_positive_sines():
     """ Tests the   count_positive_sines   function. """
@@ -530,6 +538,12 @@ def count_positive_sines(numbers):
     # TODO: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
+    import math
+    count = 0
+    for k in range(len(numbers)):
+     if math.sin(numbers[k]) > 0:
+        count = count + 1
+    return count
 
 
 def run_test_sum_first_n():
@@ -638,7 +652,10 @@ def sum_first_n(numbers, n):
     #      -- The TESTING code above does use   built_ins.sum
     #         as an ORACLE in TESTING this function, however.
     # -------------------------------------------------------------------------
-
+    sum = 0
+    for k in range(n):
+        sum = sum + numbers[k]
+    return sum
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
